@@ -1,4 +1,4 @@
-# lightbox.jquery.js
+# lightbox.backbone.js
 
 A simple lightbox using jQuery and Backbone.js.
 
