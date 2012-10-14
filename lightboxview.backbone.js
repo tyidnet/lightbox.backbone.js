@@ -1,10 +1,16 @@
 /*global _: true, Backbone: true */
 
+/**
+ * A Lightbox using jQuery and Backbone.js.
+ *
+ * dependencies:
+ * jQuery and jQuery UI
+ * Underscore.js and Backbone.js
+ * spin.js and spin.jquery.js
+ */
+
 ;(function($, exports, undefined) {
 
-  //|
-  //| Lightbox
-  //|
   var LightboxView = exports.LightboxView = Backbone.View.extend({
     tagName: "div",
 
