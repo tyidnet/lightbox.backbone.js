@@ -229,7 +229,7 @@
 
   LightboxView.CLOSE_CSS = {
     "display": "none",
-    "background-image": "url('/static/lightbox/close.png')",
+    "background-image": "url('/static/lightbox/image/close.png')",
     "position": "absolute",
     "z-index": "10000",
     "cursor": "pointer",
@@ -240,7 +240,7 @@
 
   LightboxView.INFO_CSS = {
     "display": "none",
-    "background-image": "url('/static/lightbox/info.png')",
+    "background-image": "url('/static/lightbox/image/info.png')",
     "position": "absolute",
     "z-index": "10000",
     "cursor": "help",
