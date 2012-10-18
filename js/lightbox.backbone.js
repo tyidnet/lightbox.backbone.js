@@ -14,6 +14,10 @@
   var LightboxView = exports.LightboxView = Backbone.View.extend({
     tagName: "div",
 
+    events: {
+      "click" : "toggleInfo"
+    },
+
     initialize: function(options) {
       // Img container
       this.$el
@@ -50,14 +54,13 @@
         .css(LightboxView.CLOSE_CSS)
         .appendTo(document.body);
 
-      this.setupEvents();
+      this.extraEvents();
     },
 
-    setupEvents: function() {
+    extraEvents: function() {
       var self = this;
 
       // Events for toggling meta data
-      this.$el.click(function() { self.toggleInfo(); });
       this.$info.click(function() { self.toggleInfo(); });
 
       // Events for hiding lightbox
