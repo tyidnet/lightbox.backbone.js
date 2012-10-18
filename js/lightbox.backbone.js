@@ -21,12 +21,12 @@
     initialize: function(options) {
       // Img container
       this.$el
-        .css(LightboxView.LIGHTBOX_CSS)
+        .addClass("lightbox")
         .appendTo(document.body);
 
       // Background overlay
       this.$background = $("<div>")
-        .css(LightboxView.BACKGROUND_CSS)
+        .addClass("lightbox-background")
         .css({
           width: $(window).width(),
           height: $(window).height()
@@ -35,23 +35,23 @@
 
       // Meta data container
       this.$infoContainer = $("<div>")
-        .css(LightboxView.INFO_CONTAINER_CSS)
+        .addClass("lightbox-info-container")
         .appendTo(this.el);
 
       // Meta data elements
       this.$info = $("<div>")
-        .css(LightboxView.INFO_CSS)
+        .addClass("lightbox-info")
         .appendTo(document.body);
       this.$title = $("<h1>")
-        .css(LightboxView.TITLE_CSS)
+        .addClass("lightbox-title")
         .appendTo(this.$infoContainer);
       this.$description = $("<div>")
-        .css(LightboxView.DESCRIPTION_CSS)
+        .addClass("lightbox-description")
         .appendTo(this.$infoContainer);
 
       // Close button
       this.$close = $("<div>")
-        .css(LightboxView.CLOSE_CSS)
+        .addClass("lightbox-close")
         .appendTo(document.body);
 
       this.extraEvents();
@@ -181,7 +181,7 @@
         .spin({ length: 15, radius: 20 })
         .css({ left: width / 2, top: height / 2 - 15 });
       this.$spinnerMessage = $("<div>")
-        .css(LightboxView.MESSAGE_CSS)
+        .addClass("lightbox-spinner-message")
         .text("Loading...")
         .css({ width: '100px', left: width / 2 - 50, top: height / 2 + 45 })
         .prependTo(this.el);
@@ -209,77 +209,5 @@
       this.$infoContainer.fadeToggle();
     }
   });
-
-  LightboxView.LIGHTBOX_CSS = {
-    "display": "none",
-    "cursor": "help",
-    "position": "absolute",
-    "z-index": "9999",
-    "background": "black",
-    "box-shadow": "0 0 30px #131313",
-    "overflow": "hidden"
-  };
-
-  LightboxView.BACKGROUND_CSS = {
-    "display": "none",
-    "cursor": "pointer",
-    "position": "absolute",
-    "left": "0",
-    "top": "0",
-    "z-index": "9998",
-    "background": "#252525"
-  };
-
-  LightboxView.CLOSE_CSS = {
-    "display": "none",
-    "background-image": "url('/static/lightbox/image/close.png')",
-    "position": "absolute",
-    "z-index": "10000",
-    "cursor": "pointer",
-    "height": "22px",
-    "width": "22px",
-    "opacity": "0.7"
-  };
-
-  LightboxView.INFO_CSS = {
-    "display": "none",
-    "background-image": "url('/static/lightbox/image/info.png')",
-    "position": "absolute",
-    "z-index": "10000",
-    "cursor": "help",
-    "height": "22px",
-    "width": "22px",
-    "opacity": "0.7"
-  };
-
-  LightboxView.INFO_CONTAINER_CSS = {
-    "display": "none",
-    "position": "absolute",
-    "padding": "5px 8px",
-    "right": "0",
-    "bottom": "0",
-    "text-align": "right",
-    "opacity": "0.7",
-    "background": "rgba(0,0,0,0.65)",
-    "border-radius": "2px 0 0 0"
-  };
-
-  LightboxView.TITLE_CSS = {
-    "font-family": "Helvetica, sans-serif",
-    "font-size": "20px",
-    "margin": "3px",
-    "text-shadow": "-1px 0 2px black, 1px 0 2px black, 0 -1px 2px black, 0 1px 2px black"
-  };
-
-  LightboxView.DESCRIPTION_CSS = {
-    "font-size": "15px",
-    "text-shadow": "-1px 0 2px black, 1px 0 2px black, 0 -1px 2px black, 0 1px 2px black"
-  };
-
-  LightboxView.MESSAGE_CSS = {
-    "position": "absolute",
-    "text-align": "center",
-    "text-transform": "uppercase"
-  };
 
 })(jQuery, window);
